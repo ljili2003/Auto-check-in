@@ -23,7 +23,6 @@ jobs:
 
             - name: "安装依赖包"
               run: pip install -r ./requirements.txt
-                   pip install utils
 
             - name: "运行 Quark签到"
               run: python3 function/checkIn_Quark.py
