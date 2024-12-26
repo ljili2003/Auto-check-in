@@ -27,10 +27,6 @@ jobs:
             - name: "运行 Quark签到"
               run: python3 function/checkIn_Quark.py
               env:
-                  Quark_USER: ${{ secrets.Quark_USER }}
-                  Quark_kps: ${{ secrets.Quark_kps }}
-                  Quark_sign: ${{ secrets.Quark_sign }}
-                  Quark_vcode: ${{ secrets.Quark_vcode }}
+                  COOKIE_QUARK: ${{ secrets.COOKIE_QUARK }}
                   TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
                   TG_USER_ID: ${{ secrets.TG_USER_ID }}
-#最后推送 2021年9月20日
