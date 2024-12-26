@@ -25,7 +25,7 @@ jobs:
               run: pip install -r ./requirements.txt
 
             - name: "运行 Quark签到"
-              run: python3 function/checkIn_Quark.py
+              run: python3 function/Quark/checkIn_Quark.py
               env:
                   COOKIE_QUARK: ${{ secrets.COOKIE_QUARK }}
                   TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
