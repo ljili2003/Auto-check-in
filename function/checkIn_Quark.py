@@ -32,7 +32,9 @@ import requests
 
 # 测试用环境变量
 # os.environ['COOKIE_QUARK'] = ''
-
+kps = os.environ["Quark_kps"]
+vcode = os.environ["Quark_vcode"]
+sign = os.environ["Quark_sign"]
 try:  # 异常捕捉
     from utils.notify import send  # 导入消息通知模块
 except Exception as err:  # 异常捕捉
