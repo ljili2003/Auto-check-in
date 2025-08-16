@@ -258,8 +258,8 @@ if __name__ == "__main__":
     # 多账号配置区 ##################################
     ORIGINAL_COOKIES = [
         {   # 账号1
-            'passToken': 'xxxxx',
-            'userId': 'xxxx'
+            'passToken': 'os.environ["passToken"]',
+            'userId': 'os.environ["userId"]'
         },
         {   # 账号2
             'passToken': 'xxxxx',
