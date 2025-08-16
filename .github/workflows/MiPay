@@ -1,0 +1,32 @@
+name: 小米钱包
+
+on:
+    workflow_dispatch:
+    schedule:
+        - cron: "5 16 * * *"
+    watch:
+        types: [started]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        if: github.event.repository.owner.id == github.event.sender.id || ! github.event.sender.id || github.actor == 'BlueSkyClouds'
+        timeout-minutes: 3
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v3
+
+            - name: "初始化Python"
+              uses: actions/setup-python@v4
+              with:
+                python-version: '3.8'
+
+            - name: "安装依赖包"
+              run: pip install -r ./requirements.txt
+
+            - name: "运行 小米钱包签到"
+              run: python3 function/MiPay/MiPay.py
+              env:
+                  COOKIE_QUARK: ${{ secrets.COOKIE_QUARK }}
+                  TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+                  TG_USER_ID: ${{ secrets.TG_USER_ID }}
