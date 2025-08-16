@@ -3,7 +3,7 @@ name: 小米钱包
 on:
     workflow_dispatch:
     schedule:
-        - cron: "5 16 * * *"
+        - cron: "5 10 * * *"
     watch:
         types: [started]
 
@@ -27,6 +27,6 @@ jobs:
             - name: "运行 小米钱包签到"
               run: python3 function/MiPay/MiPay.py
               env:
-                  COOKIE_QUARK: ${{ secrets.COOKIE_QUARK }}
-                  TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
-                  TG_USER_ID: ${{ secrets.TG_USER_ID }}
+                  passToken: ${{ secrets.passToken }}
+                  userId: ${{ secrets.userId}}
+                  
