@@ -1,3 +1,4 @@
+[Secrets.md](https://github.com/user-attachments/files/23595215/Secrets.md)
 ##### Cookie变量设置 Secrets:**
 
 | 名称               | 内容                      | 说明                                                                                                                 |
@@ -23,6 +24,8 @@
 | `V2EXCK`         | V2EX的Cookie             | V2EX的Cookie(由于被墙可能会签到失败)                                                                                           |
 | `BDUSS`          | 百度BDUSS                 | BDUSS值切勿使用双击复制 (结尾可能会有一个`符号`双击复制可能无法复制完整)                                                                          |
 | `BDUSS_JUMP`     | 百度贴吧黑名单                 | 直接填写无需签到贴吧名                                                                                                        |
+| `passToken` `userId`     | 小米钱包                 | 抓包下面链接的passToken和userId，填在脚本的后面https://account.xiaomi.com/pass/serviceLogin?callback=https%3A%2F%2Fapi.jr.airstarfinance.net%2Fsts%3Fsign%3D1dbHuyAmee0NAZ2xsRw5vhdVQQ8%253D%26followup%3Dhttps%253A%252F%252Fm.jr.airstarfinance.net%252Fmp%252Fapi%252Flogin%253Ffrom%253Dmipay_indexicon_TVcard%2526deepLinkEnable%253Dfalse%2526requestUrl%253Dhttps%25253A%25252F%25252Fm.jr.airstarfinance.net%25252Fmp%25252Factivity%25252FvideoActivity%25253Ffrom%25253Dmipay_indexicon_TVcard%252526_noDarkMode%25253Dtrue%252526_transparentNaviBar%25253Dtrue%252526cUserId%25253Dusyxgr5xjumiQLUoAKTOgvi858Q%252526_statusBarHeight%25253D137&sid=jrairstar&_group=DEFAULT&_snsNone=true&_loginType=ticket   |
+| `COOKIE_QUARK`     | 夸克                 |                                                              |
 ##### 推送通知环境变量(目前提供`微信server酱`、`pushplus(推送加)`、`iOS Bark APP`、`telegram机器人`、`钉钉机器人`、`企业微信机器人`、`iGot`等通知方式)
 
 |       Name        |                                        归属                                        | 属性  | 说明                                                                                                                                                                                                          |
