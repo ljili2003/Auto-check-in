@@ -10,6 +10,8 @@ on:
 jobs:
     build:
         runs-on: ubuntu-latest
+        if: github.event.repository.owner.id == github.event.sender.id || ! github.event.sender.id || github.actor == 'BlueSkyClouds'
+        timeout-minutes: 3
         steps:
             - name: Checkout
               uses: actions/checkout@v3
@@ -17,15 +19,14 @@ jobs:
             - name: "初始化Python"
               uses: actions/setup-python@v4
               with:
-                python-version: '3.10'
-                
+                python-version: '3.8'
+
             - name: "安装依赖包"
-              run: pip install requests
-     
-            - name: "运行 葫芦侠"
-              run: python3 checkIn_Quark.py
-  
-env:
-     COOKIE_QUARK: ${{secrets.COOKIE_QUARK}} 
-     TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
-     TG_USER_ID: ${{ secrets.TG_USER_ID }}
+              run: pip install -r ./requirements.txt
+
+            - name: "运行 Quark签到"
+              run: python3 function/Quark/checkIn_Quark.py
+              env:
+                  COOKIE_QUARK: ${{ secrets.COOKIE_QUARK }}
+                  TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+                  TG_USER_ID: ${{ secrets.TG_USER_ID }}
