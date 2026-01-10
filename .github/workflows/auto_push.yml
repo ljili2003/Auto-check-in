@@ -29,4 +29,4 @@ jobs:
 
             - name: Finilly pushing the repo
               run: |
-                  git push origin master
+                  git push origin main
